@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="verse">
+    @if (verseText && verseArabic && verseEnglish) {
+    <p>{{verseText.text}}</p>
+    <p>{{verseArabic.text}}</p>
+    <p>{{verseEnglish.text}}</p>
+    }
+  </div>
+  <form (ngSubmit)="Search()" [formGroup]="searchForm" class="my-form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">رقم السورة</label>
+      <input type="number" formControlName="chapter" name="chapter" class="form-control" aria-describedby="emailHelp"
+        placeholder="Enter surah number">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">رقم الاية</label>
+      <input type="number" formControlName="verse" name="verse" class="form-control"
+        placeholder="Enter the verse number">
+    </div>
+
+    <button type="submit" class="btn btn-primary">بحث</button>
+  </form>
+</div>
